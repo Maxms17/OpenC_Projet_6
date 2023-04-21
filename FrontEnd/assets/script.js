@@ -1,16 +1,21 @@
-
 // Récupération des pièces depuis le fichier JSON
-const reponse = await fetch("http://localhost:5678/api/works");
-const works = await reponse.json();
 
-const mesprojet = works[0];
+async function getData() {
+    const reponse = await fetch("http://localhost:5678/api/works");
+    const works = await reponse.json();
 
-const image = document.createElement("img");
-image.src = mesprojet.image;
+    works.map((item) => {
+        const image = document.createElement("img");
+        image.src = item.imageUrl;
+    
+        const text = document.createElement("p");
+        text.innerText = item.title;
+    
+        const sectionPortfolio = document.querySelector("#portfolio");
+        sectionPortfolio.appendChild(image);
+        sectionPortfolio.appendChild(text);
+    })
 
-const text = document.createElement("p");
-text.innerText = mesprojet.text;
+}
 
-const sectionPortfolio = document.querySelector(".portfolio");
-sectionPortfolio.appendChild(image);
-sectionPortfolio.appendChild(text);
+getData()
