@@ -23,25 +23,31 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -135,6 +141,40 @@ li:hover {
 	margin-bottom: 1em;
 }
 
+#trie {
+	margin: 45px 0px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+button {
+	padding: 2px 15px;
+	height: 37px;
+	border: 1px solid #1D6154;
+	border-radius: 60px;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+
+button:hover {
+	background-color: #1D6154;
+}
+
+button p {
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
+	color: #1D6154;
+}
+
+button:hover p {
+	color: #fff;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -149,12 +189,11 @@ li:hover {
 
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 
 #contact > * {
 	text-align: center;
-
 }
 
 #contact h2{
