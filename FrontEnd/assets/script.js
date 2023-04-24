@@ -5,17 +5,24 @@ async function getData() {
     const works = await reponse.json();
 
     works.map((item) => {
+
+        const sectionPortfolio = document.querySelector(".gallery");
+
+        const carte = document.createElement("article");
+
         const image = document.createElement("img");
         image.src = item.imageUrl;
     
         const text = document.createElement("p");
         text.innerText = item.title;
     
-        const sectionPortfolio = document.querySelector("#portfolio");
-        sectionPortfolio.appendChild(image);
-        sectionPortfolio.appendChild(text);
+        sectionPortfolio.appendChild(carte);
+
+        carte.appendChild(image);
+        carte.appendChild(text);
     })
 
 }
 
 getData()
+
