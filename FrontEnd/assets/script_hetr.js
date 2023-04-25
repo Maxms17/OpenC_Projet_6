@@ -5,22 +5,26 @@ async function getHetR() {
 
     works.map((item) => {
 
-        const sectionPortfolio = document.querySelector(".gallery");
+        const category = item.categoryId
 
-        const carte = document.createElement("article");
+        if(category === 3){
+            const sectionPortfolio = document.querySelector(".gallery");
 
-        const image = document.createElement("img");
-        image.src = item.imageUrl;
-    
-        const text = document.createElement("p");
-        text.innerText = item.title;
-    
-        sectionPortfolio.appendChild(carte);
+            const carte = document.createElement("article");
 
-        carte.appendChild(image);
-        carte.appendChild(text);
+            const image = document.createElement("img");
+            image.src = item.imageUrl;
+        
+            const text = document.createElement("p");
+            text.innerText = item.title;
+        
+            sectionPortfolio.appendChild(carte);
+
+            carte.appendChild(image);
+            carte.appendChild(text);
+        }
+        
     })
-
 }
 
 getHetR()
