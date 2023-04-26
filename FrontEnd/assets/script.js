@@ -37,17 +37,18 @@ function handlefilter(cat) {
     const articles = document.querySelectorAll('.article');
     
     articles.forEach(item => {
-        if (item.dataset.cat !== cat) {
+        if (cat === "Tous") {
+            articles.forEach(item => {
+                item.style.display = "block"
+            })
+        }
+        else if (item.dataset.cat !== cat) {
             item.style.display = "none"
         } else {
             item.style.display = "block"
         }
     })
-    if (cat === "Tous") {
-        articles.forEach(item => {
-            item.style.display = "block"
-        })
-    }
+    
 }
 
 
