@@ -1,6 +1,9 @@
 
 
 export function ajoutListenerConnection(){
+    const reponse = await fetch("http://localhost:5678/api/users/login");
+    const login_enr = await reponse.json();
+
     const login = document.querySelector(".login");
     login.addEventListener("submit", function(event){
 
@@ -11,13 +14,13 @@ export function ajoutListenerConnection(){
 
         const donneConnection = JSON.stringify(connection);
 
-        fetch("http://localhost:8081/avis", {
+        fetch("http://localhost:5500/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: donneConnection
         });
 
-        if(){
+        if(email_utilisateur === email_login && mdp_utilisateur === mdp_login){
             return(200);
         }
         else if(){
