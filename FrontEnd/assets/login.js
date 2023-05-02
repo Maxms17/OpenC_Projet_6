@@ -1,36 +1,46 @@
 
 
-export function ajoutListenerConnection(){
-    const reponse = await fetch("http://localhost:5678/api/users/login");
-    const login_enr = await reponse.json();
+function ajoutListenerConnection(){
 
-    const login = document.querySelector(".login");
-    login.addEventListener("submit", function(event){
+    try { 
 
-        const connection = {
-            email_utilisateur: event.target.querySelector("[name=email]").value,
-            mdp_utilisateur: event.target.querySelector("[name=mdp").value,
-        };
+        const login = document.querySelector(".login");
+        login.addEventListener("submit", function(event){
 
-        const donneConnection = JSON.stringify(connection);
+            const connection = {
+                email: event.target.querySelector("[name=email]").value,
+                password: event.target.querySelector("[name=mdp").value,
+            };
 
-        fetch("http://localhost:5500/", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: donneConnection
-        });
+            const donneConnection = JSON.stringify(connection);
 
-        if(email_utilisateur === email_login && mdp_utilisateur === mdp_login){
-            return(200);
-        }
-        else if(){
-            return(401);
-        }
-        else{
-            return(404);
-        }
+            fetch("http://localhost:5678/api/users/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json",  "Origin":"http://localhost:5500/" },
+                body: donneConnection
+            })
 
-    });
+            then((res) => {
+                console.log(test)
+
+                if(res === 200){
+                    console.log("200")
+                    //then(res.json)
+                }
+                else if(res === 401){
+                    console.log("401")
+                }
+                else if(res === 404){
+                    console.log("404")
+                }
+                else{
+                    console.log("Pb")
+                }
+            })
+
+        }); 
+
+    } catch ( console.log("Problème backend") ) {}
 }
 
 ajoutListenerConnection()
