@@ -61,20 +61,27 @@ body {
 	font-size: 14px;
 }
 
-#edition {
-	display: flex;
+.edition {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
 	background-color: black;
 	height: 60px;
 	width: 100%;
 }
 
-#edition h1 {
+.edition h1 {
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
 	text-align: center;
+	color: #FFFFFF;
+}
+
+.edition i {
 	color: #FFFFFF;
 }
 
@@ -86,6 +93,11 @@ body {
 	line-height: 16px;
 	text-align: center;
 	color: #000000;
+	border: 0;
+}
+
+.buttonEdition:hover {
+	color: #fff;
 }
 
 header {
