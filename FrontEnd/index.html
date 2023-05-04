@@ -13,15 +13,26 @@
 	<script src="./assets/script.js"defer></script>
 	<script src="./assets/login.js"defer></script>
 	<script src="./assets/edition.js"defer></script>
+	<script src="./assets/formulaire.js"defer></script>
 </head>
 <body>
 	
 	<div class="edition" id="edition">
 		<i class="fa-regular fa-pen-to-square"></i>
 		<h1>Mode édition</h1>
-		<button class="buttonEdition">publier les changements</button>
+		<button id="openModal" class="buttonEdition">publier les changements</button>
 	</div>
 
+	<div class="modal">
+		<div class="modal-content">
+		  <span class="close">&times;</span>
+		  <h3>Galerie photo</h3>
+		  <div class="ligne"></div>
+		  <button id="ajoutModal" class="buttonEdition">Ajouter une photo</button>
+		  <button id="suppModal" class="buttonEdition">Supprimer la galerie</button>
+		</div>
+	</div> 
+	  
 <header>
 	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 	<nav>
