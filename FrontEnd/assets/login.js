@@ -33,12 +33,10 @@ function ajoutListenerConnection() {
         .then((data) => {
             if (data) { 
                 const token = data.token; // Extrait le token du JSON
-                sessionStorage.setItem("token", token);
-      
-                const element = document.getElementById("edition");
-                element.style.display = "flex";
+                localStorage.setItem("token", token);
       
                 window.location.href = "index.html";
+                edition();
             }
         })
         .catch((error) => {
@@ -50,17 +48,16 @@ function ajoutListenerConnection() {
 
 ajoutListenerConnection();
 
-/*
+
 function ajoutListenerDeconnexion() {
     const btnDeconnexion = document.getElementById("btn-deconnexion");
     btnDeconnexion.addEventListener("click", function (event) {
       event.preventDefault();
       // Vider le sessionStorage
-      sessionStorage.removeItem("token");
+      localStorage.removeItem("token");
       // Rediriger vers la page de connexion
       window.location.href = "login.html";
     });
 }
 
 ajoutListenerDeconnexion();
-*/
