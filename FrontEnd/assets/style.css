@@ -346,14 +346,23 @@ footer nav ul {
 .modal-content {
 	margin: 15% auto;
 	padding: 20px;
-
 	width: 630px;
 	height: 731px;
 	left: 405px;
 	top: 660px;
-
 	background: #FFFFFF;
 	border-radius: 10px;
+}
+
+h3 {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 30px;
+	text-align: center;
+	color: #000000;
+	margin-top: 60px;
 }
   
 .close {
@@ -370,11 +379,49 @@ footer nav ul {
 	cursor: pointer;
 }
 
+.galleryModal {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .ligne {
-	position: absolute;
-	width: 420px;
+	width: 70%;
 	height: 0px;
-	left: 510px;
-	top: 1229px;
+	margin: 75% 15% 0% 15%;
 	border: 1px solid #B3B3B3;
+}
+
+.buttonajoutModal {
+	margin: 5% 30% 0% 30%;
+	width: 40%;
+	height: 5%;
+	background: #1D6154;
+	border: 0;
+	border-radius: 60px;
+	color: #fff;
+}
+
+.buttonajoutModal:hover {
+	background: #fff;
+	color: #1D6154;
+	border: 1px solid #1D6154;
+}
+
+.buttonsuppModal {
+	margin: 5% 30%;
+	width: 40%;
+	height: 3%;
+	font-family: 'Syne';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: #D65353;
+	border: 0;
+}
+
+.buttonsuppModal:hover {
+	background: #fff;
+	text-decoration: underline;
 }

@@ -16,21 +16,12 @@ window.addEventListener("click", function(event) {
   }
 });
 
+const ajoutModal = document.querySelector("#ajoutModal");
+ajoutModal.addEventListener("click", function () {
+  console.log("ajouter modal");
+});
 
-/*
-function modale(){
-
-}
-
-modale();
-function supprimer_modale(){
-
-}
-
-supprimer_modale();
-function ajouter_modale(){
-
-}
-
-ajouter_modale();
-*/
+const suppModal = document.querySelector("#suppModal");
+suppModal.addEventListener("click", function () {
+  console.log("supprimer modal");
+});
