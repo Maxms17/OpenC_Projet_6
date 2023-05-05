@@ -28,13 +28,34 @@ async function getEdition() {
 
 }
 
+getEdition();
+
+function handlefilter(cat) {
+  const articles = document.querySelectorAll('.article');
+  
+  articles.forEach(item => {
+      if (cat === "Visible") {
+          articles.forEach(item => {
+              item.style.display = "block"
+          })
+      }
+      else if (nonVisible === cat) {
+          item.style.display = "none"
+      } else {
+          item.style.display = "block"
+      }
+  })
+  
+}
+
 openModal.addEventListener("click", function() {
   modal.style.display = "block";
-  getEdition();
+  handlefilter("Visible")
 });
 
 close.addEventListener("click", function() {
   modal.style.display = "none";
+  handlefilter("nonVisible")
 });
 
 window.addEventListener("click", function(event) {

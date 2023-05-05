@@ -32,7 +32,6 @@ async function getTous() {
 
 getTous();
 
-
 function handlefilter(cat) {
     const articles = document.querySelectorAll('.article');
     
@@ -50,7 +49,6 @@ function handlefilter(cat) {
     })
     
 }
-
 
 boutonTrierTous.addEventListener("click", function () {
     handlefilter("Tous")
