@@ -30,7 +30,7 @@ async function getEdition() {
 
 getEdition();
 
-function handlefilter(cat) {
+function visibilityEdition(cat) {
   const articles = document.querySelectorAll('.article');
   
   articles.forEach(item => {
@@ -50,12 +50,12 @@ function handlefilter(cat) {
 
 openModal.addEventListener("click", function() {
   modal.style.display = "block";
-  handlefilter("Visible")
+  visibilityEdition("Visible")
 });
 
 close.addEventListener("click", function() {
   modal.style.display = "none";
-  handlefilter("nonVisible")
+  visibilityEdition("nonVisible")
 });
 
 window.addEventListener("click", function(event) {
