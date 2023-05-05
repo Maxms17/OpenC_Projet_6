@@ -380,14 +380,34 @@ h3 {
 }
 
 .galleryModal {
+	width: 72%;
+	height: auto;
+	margin: 5% 14% 0 14%;
+	padding: 0 2px;
 	display: flex;
 	flex-wrap: wrap;
+	gap: 23px;
+}
+
+article img {
+	width: 72px;
+	height: auto;
+}
+
+article p {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	color: #000000;
 }
 
 .ligne {
-	width: 70%;
+	width: 72%;
 	height: 0px;
-	margin: 75% 15% 0% 15%;
+	margin: 10% 14% 0% 14%;
 	border: 1px solid #B3B3B3;
 }
 
