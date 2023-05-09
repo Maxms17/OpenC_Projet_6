@@ -1,7 +1,6 @@
-function test(){
-    if(localStorage.getItem('token')){
-        console.log("test");
-    }
-}
 
-test();
+const ajoutModal = document.querySelector("#ajoutModal");
+
+ajoutModal.addEventListener("click", function () {
+  console.log("ajouter modal");
+});

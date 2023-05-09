@@ -17,6 +17,7 @@ async function getEdition() {
 
       const supp = document.createElement("i");
       supp.classList.add("fa-sharp", "fa-solid", "fa-trash-can");
+      //<i class="fa-solid fa-arrows-up-down-left-right"></i>
       supp.style.width = '17px';
       supp.style.height = '17px';
       supp.style.backgroundColor = '#000000';
@@ -69,11 +70,6 @@ window.addEventListener("click", function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-});
-
-const ajoutModal = document.querySelector("#ajoutModal");
-ajoutModal.addEventListener("click", function () {
-  console.log("ajouter modal");
 });
 
 const suppModal = document.querySelector("#suppModal");
