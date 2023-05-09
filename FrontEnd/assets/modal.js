@@ -15,11 +15,18 @@ async function getEdition() {
       const image = document.createElement("img");
       image.src = item.imageUrl;
 
+      const supp = document.createElement("i");
+      supp.classList.add("fa-sharp", "fa-solid", "fa-trash-can");
+      supp.style.width = '17px';
+      supp.style.height = '17px';
+      supp.style.backgroundColor = '#000000';
+      supp.style.borderRadius = '2px';
+      
       const text = document.createElement("p");
       text.innerText = "éditer" ;
 
       carte.classList.add("article")
-      carte.dataset.cat = item.category.name
+      carte.dataset.cat = item.category.name;
       sectionPortfolio.appendChild(carte);
 
       carte.appendChild(image);
