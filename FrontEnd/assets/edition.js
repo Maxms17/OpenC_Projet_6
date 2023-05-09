@@ -7,3 +7,12 @@ function edition(){
 }
 
 edition();
+
+function edition_modifier(){
+    if(localStorage.getItem('token')){
+        const element = document.getElementById("openModal");
+        element.style.display = "flex";
+    }
+}
+
+edition_modifier()

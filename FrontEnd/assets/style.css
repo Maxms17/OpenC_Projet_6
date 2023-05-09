@@ -172,7 +172,7 @@ li:hover a {
 }
 
 #introduction article {
-	flex: 1
+	flex: 1;
 }
 
 #introduction h2 {
@@ -185,7 +185,57 @@ li:hover a {
 
 #portfolio h2 {
 	text-align: center;
+}
+
+.modifier_article{
+
+}
+
+.modifier {
+	display: flex;
+	gap: 20px;	
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 	margin-bottom: 1em;
+}
+
+.buttonModifier{
+	display: flex;
+	align-items: center;
+	padding: 2px 15px;
+	height: 37px;
+	border: 0;
+	background-color: #fff;
+	color: #000;
+}
+
+.buttonModifier:hover{
+	padding: 2px 15px;
+	height: 37px;
+	border: 0;
+	background-color: #fff;
+	color: #000;
+}
+
+.buttonModifier p {
+	text-align: center;
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	color: #000000;
+	align-items: center;
+}
+
+.buttonModifier:hover p {	 
+	color: #000000;
+}
+
+.buttonModifier i {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 #trie {
@@ -364,6 +414,10 @@ h3 {
 	color: #000000;
 	margin-top: 60px;
 }
+
+#openModal {
+	display: none;
+}
   
 .close {
 	color: #aaaaaa;
@@ -394,7 +448,7 @@ article img {
 	height: auto;
 }
 
-article p {
+.galleryModal article p {
 	font-family: 'Work Sans';
 	font-style: normal;
 	font-weight: 400;
