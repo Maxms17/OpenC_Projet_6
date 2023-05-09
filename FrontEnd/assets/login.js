@@ -53,5 +53,5 @@ btnDeconnexion.addEventListener("click", function (event) {
     // Rediriger vers la page de connexion
     window.location.href = "login.html";
 });
-
+  
 

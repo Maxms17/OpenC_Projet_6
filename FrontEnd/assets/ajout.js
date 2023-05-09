@@ -1,4 +1,7 @@
+function test(){
+    if(localStorage.getItem('token')){
+        console.log("test");
+    }
+}
 
-const modal = document.querySelector("");
-const openModal = document.querySelector("");
-const close = document.querySelector("");
+test();
