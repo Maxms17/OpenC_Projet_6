@@ -381,7 +381,8 @@ footer nav ul {
 
 /* Modale */ 
 
-.modal {
+.modal,
+.modal_deux {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -393,7 +394,8 @@ footer nav ul {
 	background-color: rgba(0, 0, 0, 0.4);
 }
   
-.modal-content {
+.modal-content,
+.modal-content_deux {
 	margin: 15% auto;
 	padding: 20px;
 	width: 630px;
@@ -418,8 +420,23 @@ h3 {
 #openModal {
 	display: none;
 }
+
+.retour {
+	color: #aaaaaa;
+	float: left;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.retour:hover,
+.retour:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
   
-.close {
+.close,
+.close_deux {
 	color: #aaaaaa;
 	float: right;
 	font-size: 28px;
@@ -427,7 +444,9 @@ h3 {
 }
   
 .close:hover,
-.close:focus {
+.close:focus,
+.close_deux:hover,
+.close_deux:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
@@ -519,4 +538,20 @@ article img {
 .buttonsuppModal:hover {
 	background: #fff;
 	text-decoration: underline;
+}
+
+.buttonajoutValide {
+	margin: 5% 30% 0% 30%;
+	width: 40%;
+	height: 5%;
+	background: #A7A7A7;
+	border: 0;
+	border-radius: 60px;
+	color: #fff;
+}
+
+.buttonajoutValide:hover {
+	background: #1D6154;
+	color: #fff;
+	border: 1px solid #1D6154;
 }
