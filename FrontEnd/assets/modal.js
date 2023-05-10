@@ -19,6 +19,7 @@ async function getEdition() {
       image.src = item.imageUrl;
 
       const btnSupp = document.createElement("button");
+      btnSupp.classList.add("buttonSupp");
 
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
