@@ -3,8 +3,8 @@ const openModal = document.querySelector("#openModal");
 const close = document.querySelector(".close");
 
 async function getEdition() {
-  const reponse = await fetch("http://localhost:5678/api/works");
-  const works = await reponse.json();
+  const response = await fetch("http://localhost:5678/api/works");
+  const works = await response.json();
 
   works.map((item) => {
       console.log(item)
@@ -12,17 +12,17 @@ async function getEdition() {
 
       const carte = document.createElement("article");
 
+      const imageContainer = document.createElement("div");
+      imageContainer.style.position = 'relative';
+
       const image = document.createElement("img");
       image.src = item.imageUrl;
 
+      const btnSupp = document.createElement("button");
+
       const supp = document.createElement("i");
-      supp.classList.add("fa-sharp", "fa-solid", "fa-trash-can");
-      //<i class="fa-solid fa-arrows-up-down-left-right"></i>
-      supp.style.width = '17px';
-      supp.style.height = '17px';
-      supp.style.backgroundColor = '#000000';
-      supp.style.borderRadius = '2px';
-      
+      supp.classList.add("fa-solid", "fa-trash-can");
+
       const text = document.createElement("p");
       text.innerText = "éditer" ;
 
@@ -30,7 +30,10 @@ async function getEdition() {
       carte.dataset.cat = item.category.name;
       sectionPortfolio.appendChild(carte);
 
-      carte.appendChild(image);
+      carte.appendChild(imageContainer);
+      imageContainer.appendChild(image);
+      imageContainer.appendChild(btnSupp);
+      btnSupp.appendChild(supp);
       carte.appendChild(text);
   })
 
@@ -70,9 +73,4 @@ window.addEventListener("click", function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-});
-
-const suppModal = document.querySelector("#suppModal");
-suppModal.addEventListener("click", function () {
-  console.log("supprimer modal");
 });

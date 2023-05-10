@@ -443,6 +443,27 @@ h3 {
 	gap: 23px;
 }
 
+.galleryModal button{
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	background-color: #000000;
+	width: 17px;
+	height: 17px;
+	border-radius: 2px;
+	padding: 0;
+	border: 0;
+}
+
+.galleryModal i{
+	color: #fff;
+	width: 14px;
+	height: 14px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
 article img {
 	width: 72px;
 	height: auto;
