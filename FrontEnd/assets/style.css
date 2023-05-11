@@ -415,6 +415,7 @@ h3 {
 	text-align: center;
 	color: #000000;
 	margin-top: 60px;
+	margin-bottom: 30px;
 }
 
 #openModal {
@@ -543,7 +544,6 @@ article img {
 .buttonajoutValide {
 	margin: 5% 30% 0% 30%;
 	width: 40%;
-	height: 5%;
 	background: #A7A7A7;
 	border: 0;
 	border-radius: 60px;
@@ -554,4 +554,71 @@ article img {
 	background: #1D6154;
 	color: #fff;
 	border: 1px solid #1D6154;
+}
+
+.formulaireLegende {
+	font-family: 'Work Sans';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	color: #3D3D3D;
+	margin-left: 14%;
+}
+
+.formulaireSaisieImg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 72%;
+	height: 170px;
+	margin: 5% 0 5% 14%;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	background: #E8F1F7;
+	border-radius: 3px;
+}
+
+.carreImage {
+	margin-top: 2%;
+}
+
+.carreImage i {
+	width: 100%;
+	height: 100%;
+	font-size: 4rem;
+	color: #B9C5CC;
+}
+
+input[type="file"] {
+	border: none;
+	outline: none;
+	cursor: pointer;
+	width: 173px;
+	height: 36px;
+	background: #CBD6DC;
+	border-radius: 50px;
+	margin: 15px;
+	background-size: cover;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	transition: all 0.3s ease-in-out;
+}
+  
+input[type="image"]:hover {
+	transform: scale(1.1);
+}
+
+.formulaireSaisieTitre {
+	width: 72%;
+	height: 51px;
+	margin: 5% 0 5% 14%;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.formulaireSaisieCat {
+	width: 72%;
+	height: 51px;
+	margin: 5% 0 5% 14%;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }

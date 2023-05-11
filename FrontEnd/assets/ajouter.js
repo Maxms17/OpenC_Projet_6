@@ -1,5 +1,4 @@
 
-//const ajoutModal = document.querySelector("#ajoutModal");
 const ajoutModal = document.getElementById("ajoutModal");
 
 ajoutModal.addEventListener("click", function () {
@@ -7,35 +6,6 @@ ajoutModal.addEventListener("click", function () {
   const modal_deux = document.querySelector(".modal_deux");
   modal_deux.style.display = "block";
   modal.style.display = "none";
-
-  const form = document.querySelector("#formulaire");
-  document.querySelector(".formulaire").appendChild(form);
-  
-  const input_img = document.createElement('input');
-  input_img.type = 'file';
-  input_img.name = 'imageUrl';
-  form.appendChild(input_img);
-
-  const input_title = document.createElement('input');
-  input_title.type = 'text';
-  input_title.name = 'title';
-  form.appendChild(input_title);
-  
-  const button = document.createElement('button');
-  button.type = 'submit';
-  button.textContent = 'Valider';
-  button.classList.add("buttonajoutValide");
-  form.appendChild(button);
-  
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const ajoutProjet = {
-      imageUrl: input_img.value,
-      title: input_title.value
-    };
-    console.log(ajoutProjet);
-  });
 
   const close_deux = document.querySelector(".close_deux");
 
@@ -55,6 +25,44 @@ ajoutModal.addEventListener("click", function () {
     if (event.target == modal_deux) {
       modal_deux.style.display = "none";
     }
+  });
+
+});
+
+const form = document.querySelector('.modal-content_deux');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const formulaireRempli = {
+    imageUrl : document.querySelector('#image').value,
+    imagefile : document.querySelector('#image').files[0],
+    title: document.querySelector('#titre').value,
+    categorieId : document.querySelector('#categorie').value,
+  };
+  
+  fetch('http://localhost:5678/api/works', {
+    method: 'POST',
+    body: JSON.stringify(formulaireRempli),
+    headers: { "Content-Type": "application/json", "Origin": "http://localhost:5500/" },
+  })
+  .then(response => {
+    if(response.status === 200){
+      document.getElementById("error-message").innerHTML = "L'ajout est enregistré.";
+      return response.json();
+    }
+    else if(response.status === 400){
+      document.getElementById("error-message").innerHTML = "Mauvaise saisie.";
+    }
+    else if(response.status === 401){
+      document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";
+    }
+    else{
+      document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
+    }
+  })
+  .catch(error => {
+    console.error(error);
   });
 
 });

@@ -43,11 +43,32 @@
 			<span class="retour"><i class="fa fa-chevron-left"></i></span>
 		  	<span class="close_deux">&times;</span>
 		  	<h3>Ajout photo</h3>
-			<div class="formulaire">
-				<div id="formulaire"></div>
-			</div>
-		  	<div class="ligne"></div>
-		  	<!--<button id="ajoutValide" class="buttonajoutValide">Valider </button>-->
+			<form>
+				<div class="formulaireSaisieImg">
+					<div class="carreImage">
+						<i class="fa-sharp fa-regular fa-image"></i>
+					</div>
+					<input type="file" id="image" name="image" accept="image/*" required>
+					<label for="image">jpg, png : 4 MO max</label>
+				</div>
+		
+				<label class="formulaireLegende" for="titre">Titre :</label>
+				<input class=formulaireSaisieTitre type="text" id="titre" name="titre" required>
+					
+				<label class="formulaireLegende" for="categorie">Catégorie :</label>
+				<select class=formulaireSaisieCat id="categorie" name="categorie">
+					<option value="Rien"> </option>
+					<option value="Objets">Objets</option>
+					<option value="Appartements">Appartements</option>
+					<option value="HetR">Hôtel & restaurants</option>
+				</select>
+
+				<p id="error-message" class="error"></p>
+
+				<div class="ligne"></div>
+				<button type="submit" id="ajoutValide" class="buttonajoutValide">Valider </button>
+			</form>
+		  	
 		</div>
 	</div> 
 	  
