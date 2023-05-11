@@ -1,5 +1,6 @@
 
-const ajoutModal = document.querySelector("#ajoutModal");
+//const ajoutModal = document.querySelector("#ajoutModal");
+const ajoutModal = document.getElementById("ajoutModal");
 
 ajoutModal.addEventListener("click", function () {
 
@@ -7,11 +8,11 @@ ajoutModal.addEventListener("click", function () {
   modal_deux.style.display = "block";
   modal.style.display = "none";
 
-  /* */
-  const form = document.querySelector(".formulaire");
-
+  const form = document.querySelector("#formulaire");
+  document.querySelector(".formulaire").appendChild(form);
+  
   const input_img = document.createElement('input');
-  input_img.type = 'image';
+  input_img.type = 'file';
   input_img.name = 'imageUrl';
   form.appendChild(input_img);
 
@@ -26,6 +27,7 @@ ajoutModal.addEventListener("click", function () {
   button.classList.add("buttonajoutValide");
   form.appendChild(button);
   
+
   form.addEventListener('submit', function(event) {
     event.preventDefault();
     const ajoutProjet = {
@@ -34,7 +36,6 @@ ajoutModal.addEventListener("click", function () {
     };
     console.log(ajoutProjet);
   });
-  /* */
 
   const close_deux = document.querySelector(".close_deux");
 

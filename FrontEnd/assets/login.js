@@ -1,5 +1,5 @@
 const btnDeconnexion = document.getElementById("btn-deconnexion");
-const login = document.querySelector(".login");
+const login = document.querySelector("#login");
 
 login.addEventListener("submit", function (event) {
     event.preventDefault(); // éviter que la page ne se recharge
