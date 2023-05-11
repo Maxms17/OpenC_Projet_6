@@ -35,16 +35,23 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
 
   const formulaireRempli = {
-    imageUrl : document.querySelector('#image').value,
-    imagefile : document.querySelector('#image').files[0],
+    id : 12,
     title: document.querySelector('#titre').value,
-    categorieId : document.querySelector('#categorie').value,
+    imageUrl : document.querySelector('#image').value,
+    /*imagefile : document.querySelector('#image').files[0],*/
+    categoryId : document.querySelector('#categorie').value,
+    userId : 0,
   };
+
+  const token = localStorage.getItem('token');
+  console.log(token);
   
   fetch('http://localhost:5678/api/works', {
     method: 'POST',
     body: JSON.stringify(formulaireRempli),
-    headers: { "Content-Type": "application/json", "Origin": "http://localhost:5500/" },
+    headers: {
+      Authentication: `Bearer ${token}`
+    }
   })
   .then(response => {
     if(response.status === 200){
