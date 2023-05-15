@@ -21,8 +21,8 @@ async function getEdition() {
       const btnSupp = document.createElement("button");
       btnSupp.classList.add("buttonSupp");
 
-      const id = btnSupp.dataset.id;
-      console.log(id)
+      btnSupp.dataset.id = 1
+      console.log(btnSupp.dataset.id)
 
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
