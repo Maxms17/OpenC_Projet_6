@@ -21,6 +21,8 @@ async function getEdition() {
       const btnSupp = document.createElement("button");
       btnSupp.classList.add("buttonSupp");
 
+      const id = btnSupp.dataset.id;
+
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
 
@@ -63,6 +65,36 @@ function visibilityEdition(cat) {
 openModal.addEventListener("click", function() {
   modal.style.display = "block";
   visibilityEdition("Visible")
+
+  const elem = document.querySelectorAll(".buttonSupp");
+
+  elem.forEach(function(btnSupp) {
+    btnSupp.addEventListener("click", function() {
+      const id = btnSupp.dataset.id; // Récupération de l'id de l'élément à supprimer à partir du dataset du bouton
+      const token = localStorage.getItem('token');
+
+      fetch(`http://localhost:5678/api/works/${id}`, {
+        method: 'DELETE',
+        headers: { "Content-Type": "application/json", "Origin": "http://localhost:5678/", "Authentication": `Bearer ${token}`}
+      })
+      .then(response => {
+        if(response.status === 200){
+          document.getElementById("error-message").innerHTML = "Suppression enregistrée.";
+          article.remove(); // Supprime l'élément HTML correspondant
+        }
+        else if(response.status === 401){
+          document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";
+        }
+        else{
+          document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    });
+  });
+
 });
 
 close.addEventListener("click", function() {

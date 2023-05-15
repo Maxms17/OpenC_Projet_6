@@ -34,23 +34,23 @@ const form = document.querySelector('.modal-content_deux');
 form.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const formulaireRempli = {
-    id : 12,
-    title: document.querySelector('#titre').value,
-    imageUrl : document.querySelector('#image').value,
-    /*imagefile : document.querySelector('#image').files[0],*/
-    categoryId : document.querySelector('#categorie').value,
-    userId : 0,
-  };
+  const title = document.querySelector('#titre').value
+  const images = document.querySelector('#image').files[0]
+  const category = document.querySelector('#categorie').value
+
+  const formdata = new FormData();
+
+  formdata.append("title", title)
+  formdata.append("images", images)
+  formdata.append("category", category)
 
   const token = localStorage.getItem('token');
-  console.log(token);
   
   fetch('http://localhost:5678/api/works', {
     method: 'POST',
-    body: JSON.stringify(formulaireRempli),
+    body: formdata,
     headers: {
-      Authentication: `Bearer ${token}`
+      "Authentication": `Bearer ${token}`
     }
   })
   .then(response => {
@@ -67,6 +67,9 @@ form.addEventListener('submit', function(event) {
     else{
       document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
     }
+  })
+  .then(data => {
+    console.log(data); // affiche la réponse JSON de la requête POST
   })
   .catch(error => {
     console.error(error);
