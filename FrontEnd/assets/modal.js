@@ -22,6 +22,7 @@ async function getEdition() {
       btnSupp.classList.add("buttonSupp");
 
       const id = btnSupp.dataset.id;
+      console.log(id)
 
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
@@ -62,15 +63,14 @@ function visibilityEdition(cat) {
   
 }
 
-openModal.addEventListener("click", function() {
+openModal.addEventListener("click", function(id) {
   modal.style.display = "block";
   visibilityEdition("Visible")
 
-  const elem = document.querySelectorAll(".buttonSupp");
+  const buttonSupp = document.querySelectorAll('.buttonSupp');
 
-  elem.forEach(function(btnSupp) {
-    btnSupp.addEventListener("click", function() {
-      const id = btnSupp.dataset.id; // Récupération de l'id de l'élément à supprimer à partir du dataset du bouton
+  buttonSupp.forEach(button => {
+    button.addEventListener('click', () => {
       const token = localStorage.getItem('token');
 
       fetch(`http://localhost:5678/api/works/${id}`, {
@@ -80,7 +80,7 @@ openModal.addEventListener("click", function() {
       .then(response => {
         if(response.status === 200){
           document.getElementById("error-message").innerHTML = "Suppression enregistrée.";
-          article.remove(); // Supprime l'élément HTML correspondant
+          btnSupp.remove(); 
         }
         else if(response.status === 401){
           document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";
@@ -94,7 +94,6 @@ openModal.addEventListener("click", function() {
       });
     });
   });
-
 });
 
 close.addEventListener("click", function() {
