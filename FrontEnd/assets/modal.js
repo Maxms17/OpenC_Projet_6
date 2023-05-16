@@ -7,7 +7,7 @@ async function getEdition() {
   const works = await response.json();
 
   works.map((item) => {
-      console.log(item)
+      //console.log(item)
       const sectionPortfolio = document.querySelector(".galleryModal");
 
       const carte = document.createElement("article");
@@ -21,9 +21,9 @@ async function getEdition() {
       const btnSupp = document.createElement("button");
       btnSupp.classList.add("buttonSupp");
 
-      btnSupp.dataset.id = 1
-      console.log(btnSupp.dataset.id)
-
+      btnSupp.dataset.id = item.id;
+      //console.log(btnSupp.dataset.id);
+    
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
 
@@ -63,7 +63,7 @@ function visibilityEdition(cat) {
   
 }
 
-openModal.addEventListener("click", function(id) {
+openModal.addEventListener("click", function() {
   modal.style.display = "block";
   visibilityEdition("Visible")
 
@@ -71,16 +71,21 @@ openModal.addEventListener("click", function(id) {
 
   buttonSupp.forEach(button => {
     button.addEventListener('click', () => {
+      const id = button.dataset.id;
       const token = localStorage.getItem('token');
 
-      fetch(`http://localhost:5678/api/works/${id}`, {
+      //console.log(id);
+      //console.log(token);
+      //console.log('http://localhost:5678/api/works/'+id)
+
+      fetch(`http://localhost:5678/api/works/`+id, {
         method: 'DELETE',
         headers: { "Content-Type": "application/json", "Origin": "http://localhost:5678/", "Authentication": `Bearer ${token}`}
       })
       .then(response => {
         if(response.status === 200){
           document.getElementById("error-message").innerHTML = "Suppression enregistrée.";
-          btnSupp.remove(); 
+          button.remove(); 
         }
         else if(response.status === 401){
           document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";

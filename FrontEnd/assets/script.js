@@ -9,7 +9,7 @@ async function getTous() {
     const works = await reponse.json();
 
     works.map((item) => {
-        console.log(item)
+        //console.log(item)
         const sectionPortfolio = document.querySelector(".gallery");
 
         const carte = document.createElement("article");
