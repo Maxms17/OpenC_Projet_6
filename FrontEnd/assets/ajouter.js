@@ -35,13 +35,17 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
 
   const title = document.querySelector('#titre').value
-  const images = document.querySelector('#image').files[0]
+  const image = document.querySelector('#image').files[0]
   const category = document.querySelector('#categorie').value
 
   const formdata = new FormData();
 
+  console.log(title);
+  console.log(image);
+  console.log(category);
+
   formdata.append("title", title)
-  formdata.append("images", images)
+  formdata.append("image", image)
   formdata.append("category", category)
 
   const token = localStorage.getItem('token');
@@ -49,7 +53,7 @@ form.addEventListener('submit', function(event) {
   fetch('http://localhost:5678/api/works', {
     method: 'POST',
     body: formdata,
-    headers: { "Content-Type": "application/json", "Origin": "http://localhost:5678/", "authorization": `Bearer ${token}`}
+    headers: { "Content-Type": "multipart/form-data", "Origin": "http://localhost:5678/", "authorization": `Bearer ${token}`}
   })
   .then(response => {
     if(response.status === 200){
@@ -66,9 +70,6 @@ form.addEventListener('submit', function(event) {
       document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
     }
   })
-  //.then(data => {
-  //  console.log(data); // affiche la réponse JSON de la requête POST
-  //})
   .catch(error => {
     console.error(error);
   });
