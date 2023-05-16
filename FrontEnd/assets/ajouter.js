@@ -50,7 +50,7 @@ form.addEventListener('submit', function(event) {
     method: 'POST',
     body: formdata,
     headers: {
-      "Authentication": `Bearer ${token}`
+      "authorization": `Bearer ${token}`
     }
   })
   .then(response => {

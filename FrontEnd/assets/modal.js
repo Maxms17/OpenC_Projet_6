@@ -78,9 +78,9 @@ openModal.addEventListener("click", function() {
       //console.log(token);
       //console.log('http://localhost:5678/api/works/'+id)
 
-      fetch(`http://localhost:5678/api/works/`+id, {
+      fetch(`http://localhost:5678/api/works/${id}`, {
         method: 'DELETE',
-        headers: { "Content-Type": "application/json", "Origin": "http://localhost:5678/", "Authentication": `Bearer ${token}`}
+        headers: { "Content-Type": "application/json", "Origin": "http://localhost:5678/", "authorization": `Bearer ${token}`}
       })
       .then(response => {
         if(response.status === 200){
