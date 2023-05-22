@@ -40,38 +40,43 @@ form.addEventListener('submit', function(event) {
 
   const formdata = new FormData();
 
-  console.log(title);
-  console.log(image);
-  console.log(category);
+  //console.log(title);
+  //console.log(image);
+  //console.log(category);
 
   formdata.append("title", title)
   formdata.append("image", image)
   formdata.append("category", category)
 
   const token = localStorage.getItem('token');
-  
-  fetch('http://localhost:5678/api/works', {
-    method: 'POST',
-    body: formdata,
-    headers: { "Content-Type": "multipart/form-data", "Origin": "http://localhost:5678/", "authorization": `Bearer ${token}`}
-  })
-  .then(response => {
-    if(response.status === 200){
-      document.getElementById("error-message").innerHTML = "L'ajout est enregistré.";
-      return response.json();
-    }
-    else if(response.status === 400){
-      document.getElementById("error-message").innerHTML = "Mauvaise saisie.";
-    }
-    else if(response.status === 401){
-      document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";
-    }
-    else{
-      document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
-    }
-  })
-  .catch(error => {
-    console.error(error);
-  });
+
+  if(image.type === 'image/png' || image.type === 'image/jpeg'){
+    fetch('http://localhost:5678/api/works', {
+      method: 'POST',
+      body: formdata,
+      headers: { "Authorization": `Bearer ${token}`}
+    })
+    .then(response => {
+      if(response.status === 200){
+        document.getElementById("error-message").innerHTML = "L'ajout est enregistré.";
+        return response.json();
+      }
+      else if(response.status === 400){
+        document.getElementById("error-message").innerHTML = "Mauvaise saisie.";
+      }
+      else if(response.status === 401){
+        document.getElementById("error-message").innerHTML = "Vous n'êtes pas autorisé.";
+      }
+      else{
+        document.getElementById("error-message").innerHTML = "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.";
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
+  else{
+    document.getElementById("error-message").innerHTML = "Veuillez saisir une image de type png ou jpeg.";
+  }
 
 });

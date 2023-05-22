@@ -1,4 +1,4 @@
-const btnDeconnexion = document.getElementById("btn-deconnexion");
+
 const login = document.querySelector("#login");
 
 login.addEventListener("submit", function (event) {
@@ -46,12 +46,4 @@ login.addEventListener("submit", function (event) {
     });
 });
 
-btnDeconnexion.addEventListener("click", function (event) {
-    event.preventDefault();
-    // Vider le sessionStorage
-    localStorage.removeItem("token");
-    // Rediriger vers la page de connexion
-    window.location.href = "login.html";
-});
-  
 
