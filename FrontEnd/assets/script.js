@@ -35,17 +35,11 @@ async function getCategorie() {
 
     /* Ajout option formulaire */
     const formulaire_option = document.querySelector("#categorie");
-
-    const options = [
-        { value: '1', text: 'Objets' },
-        { value: '2', text: 'Appartements' },
-        { value: '3', text: 'Hôtel & restaurants' }
-    ];
       
-    options.forEach((option) => {
+    categories.forEach((item) => {
         const option_trie = document.createElement('option');
-        option_trie.value = option.value;
-        option_trie.textContent = option.text;
+        option_trie.value = item.id;
+        option_trie.textContent =  item.name;
         
         formulaire_option.appendChild(option_trie);
     });
