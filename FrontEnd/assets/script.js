@@ -1,7 +1,4 @@
-const boutonTrierTous = document.querySelector(".button_trier_Tous");
-const boutonTrierObj = document.querySelector(".button_trier_Obj");
-const boutonTrierApp = document.querySelector(".button_trier_App");
-const boutonTrierHetR = document.querySelector(".button_trier_HetR");
+
 
 
 async function getTous() {
@@ -32,6 +29,72 @@ async function getTous() {
 
 getTous();
 
+async function getCategorie() {
+    const response = await fetch("http://localhost:5678/api/categories");
+    const categories = await response.json();
+
+    /* Ajout option formulaire */
+    const formulaire_option = document.querySelector("#categorie");
+
+    const options = [
+        { value: '1', text: 'Objets' },
+        { value: '2', text: 'Appartements' },
+        { value: '3', text: 'Hôtel & restaurants' }
+    ];
+      
+    options.forEach((option) => {
+        const option_trie = document.createElement('option');
+        option_trie.value = option.value;
+        option_trie.textContent = option.text;
+        
+        formulaire_option.appendChild(option_trie);
+    });
+
+    /* Ajout Trie bouton */
+    const sectionBoutontrie = document.querySelector(".trie");
+
+    const bouton = document.createElement('button');
+    bouton.className = 'button button_trier_Tous';
+    bouton.innerHTML = '<p> Tous </p>';
+
+    sectionBoutontrie.appendChild(bouton);
+
+    categories.forEach((item) => {
+        if (item.id != 0) {
+            
+            const bouton_boucle = document.createElement('button');
+            bouton_boucle.className = 'button button_trier_' + item.id;
+            bouton_boucle.innerHTML = '<p>' + item.name + '</p>';
+
+            sectionBoutontrie.appendChild(bouton_boucle);
+        }
+    });
+
+    /* Bouton trier */
+    const boutonTrierTous = document.querySelector(".button_trier_Tous");
+    const boutonTrierObj = document.querySelector(".button_trier_1");
+    const boutonTrierApp = document.querySelector(".button_trier_2");
+    const boutonTrierHetR = document.querySelector(".button_trier_3");
+
+    boutonTrierTous.addEventListener("click", function () {
+        handlefilter("Tous")
+    });
+    
+    boutonTrierObj.addEventListener("click", function () {
+        handlefilter("Objets")
+    });
+    
+    boutonTrierApp.addEventListener("click", function () {
+        handlefilter("Appartements")
+    });
+    
+    boutonTrierHetR.addEventListener("click", function () {
+        handlefilter("Hotels & restaurants")
+    });
+}
+
+getCategorie();
+
 function handlefilter(cat) {
     const articles = document.querySelectorAll('.article');
     
@@ -50,18 +113,3 @@ function handlefilter(cat) {
     
 }
 
-boutonTrierTous.addEventListener("click", function () {
-    handlefilter("Tous")
-});
-
-boutonTrierObj.addEventListener("click", function () {
-    handlefilter("Objets")
-});
-
-boutonTrierApp.addEventListener("click", function () {
-    handlefilter("Appartements")
-});
-
-boutonTrierHetR.addEventListener("click", function () {
-    handlefilter("Hotels & restaurants")
-});
