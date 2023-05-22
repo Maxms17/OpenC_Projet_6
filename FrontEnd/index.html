@@ -11,7 +11,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js"defer></script>
-	<script src="./assets/logout.js"defer></script>
+	<script src="./assets/logout_index.js"defer></script>
 	<script src="./assets/edition.js"defer></script>
 	<script src="./assets/modal.js"defer></script>
 	<script src="./assets/ajouter.js"defer></script>
@@ -22,7 +22,7 @@
 		<i class="fa-regular fa-pen-to-square"></i>
 		<h1>Mode édition</h1>
 		<button class="buttonEdition">publier les changements</button>
-		<button class="buttonEdition" class="btn-deconnexion">déconnexion</button>
+		<button class="buttonEdition" id="boutonDeconnexion2">déconnexion</button>
 	</div>
 
 	<div class="modal">
@@ -72,74 +72,74 @@
 		</div>
 	</div> 
 	  
-<header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-	<nav>
-		<ul>
-			<li><a href="index.html">projets</a></li>
-			<li><a href="index.html">contact</a></li>
-			<li><a href="login.html">login</a></li>
-			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-		</ul>
-	</nav>
-</header>
-<main>
+	<header>
+		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+		<nav>
+			<ul>
+				<li><a href="index.html">projets</a></li>
+				<li><a href="index.html">contact</a></li>
+				<li><a href="login.html">login</a></li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
 
-	<section id="introduction">
-		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
-		</figure>
-		<article>
-			<h2>Designer d'espace</h2>
-			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
-			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
-		</article>
-	</section>
+		<section id="introduction">
+			<figure>
+				<img src="./assets/images/sophie-bluel.png" alt="">
+			</figure>
+			<article>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+			</article>
+		</section>
 
-	<section id="portfolio">
-		
-		<div class="modifier">
-			<h2>Mes Projets</h2>
-			<button class="buttonModifier" id="openModal"><i class="fa-regular fa-pen-to-square"></i><p>Modifier</p></button>
-		</div>
-
-		<div id="trie">
-			<button class="button button_trier_Tous"><p>Tous</p></button>
-			<button class="button button_trier_Obj"><p>Objets</p></button>
-			<button class="button button_trier_App"><p>Appartements</p></button>
-			<button class="button button_trier_HetR"><p>Hôtel & restaurants</p></button>
-		</div>
-
-		<div class="gallery">
+		<section id="portfolio">
 			
-		</div>
-	
-	</section>
+			<div class="modifier">
+				<h2>Mes Projets</h2>
+				<button class="buttonModifier" id="openModal"><i class="fa-regular fa-pen-to-square"></i><p>Modifier</p></button>
+			</div>
 
-	<section id="contact">
-		<h2>Contact</h2>
-		<p>Vous avez un projet ? Discutons-en !</p>
-		<form action="#" method="post">
-			<label for="name">Nom</label>
-			<input type="text" name="name" id="name">
-			<label for="email">Email</label>
-			<input type="email" name="email" id="email">
-			<label for="message">Message</label>
-			<textarea name="message" id="message" cols="30" rows="10"></textarea>
-			<input type="submit" value="Envoyer">
-		</form>
-	</section>
-	
-</main>
+			<div id="trie">
+				<button class="button button_trier_Tous"><p>Tous</p></button>
+				<button class="button button_trier_Obj"><p>Objets</p></button>
+				<button class="button button_trier_App"><p>Appartements</p></button>
+				<button class="button button_trier_HetR"><p>Hôtel & restaurants</p></button>
+			</div>
 
-<footer>
-	<nav>
-		<ul>
-			<li>Mentions Légales</li>
-		</ul>
-	</nav>
-</footer>
+			<div class="gallery">
+				
+			</div>
+		
+		</section>
+
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Vous avez un projet ? Discutons-en !</p>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer">
+			</form>
+		</section>
+		
+	</main>
+
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
 
 </body>
 </html>
