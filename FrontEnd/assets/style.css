@@ -502,7 +502,7 @@ article img {
 .ligne {
 	width: 72%;
 	height: 0px;
-	margin: 10% 14% 0% 14%;
+	margin: 5% 14% 0% 14%;
 	border: 1px solid #B3B3B3;
 }
 
@@ -571,7 +571,7 @@ article img {
 	flex-direction: column;
 	align-items: center;
 	width: 72%;
-	height: 170px;
+	height: 200px;
 	margin: 5% 0 5% 14%;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	background: #E8F1F7;
@@ -589,7 +589,7 @@ article img {
 	color: #B9C5CC;
 }
 
-input[type="file"] {
+.addbutton {
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -601,6 +601,13 @@ input[type="file"] {
 	background-size: cover;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 	transition: all 0.3s ease-in-out;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #306685;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
 }
 
 .formulaireSaisieTitre {
@@ -617,4 +624,8 @@ input[type="file"] {
 	margin: 5% 0 5% 14%;
 	background: #FFFFFF;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#image{
+	opacity: 0;
 }
