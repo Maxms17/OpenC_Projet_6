@@ -7,7 +7,7 @@ async function getEdition() {
   const works = await response.json();
 
   works.map((item) => {
-      //console.log(item)
+ 
       const sectionPortfolio = document.querySelector(".galleryModal");
 
       const carte = document.createElement("article");
@@ -22,8 +22,7 @@ async function getEdition() {
       btnSupp.classList.add("buttonSupp");
 
       btnSupp.dataset.id = item.id;
-      //console.log(btnSupp.dataset.id);
-    
+   
       const supp = document.createElement("i");
       supp.classList.add("fa-solid", "fa-trash-can");
 
@@ -73,10 +72,6 @@ openModal.addEventListener("click", function() {
     button.addEventListener('click', () => {
       const id = button.dataset.id;
       const token = localStorage.getItem('token');
-
-      //console.log(id);
-      //console.log(token);
-      //console.log('http://localhost:5678/api/works/'+id)
 
       fetch(`http://localhost:5678/api/works/${id}`, {
         method: 'DELETE',

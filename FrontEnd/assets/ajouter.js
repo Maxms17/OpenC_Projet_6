@@ -40,10 +40,6 @@ form.addEventListener('submit', function(event) {
 
   const formdata = new FormData();
 
-  //console.log(title);
-  //console.log(image);
-  //console.log(category);
-
   formdata.append("title", title)
   formdata.append("image", image)
   formdata.append("category", category)

@@ -24,6 +24,5 @@ const addButton = document.querySelector('.addButton')
 
 addButton?.addEventListener('click', () => {
     const input = document.querySelector('#image')
-    console.log("test")
     input.click()
 })

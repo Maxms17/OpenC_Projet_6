@@ -571,7 +571,7 @@ article img {
 	flex-direction: column;
 	align-items: center;
 	width: 72%;
-	height: 200px;
+	height: 170px;
 	margin: 5% 0 5% 14%;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	background: #E8F1F7;
@@ -627,5 +627,7 @@ article img {
 }
 
 #image{
+	margin-top: -45px;
 	opacity: 0;
+	margin-bottom: 30px;
 }

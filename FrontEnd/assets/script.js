@@ -1,12 +1,9 @@
 
-
-
 async function getTous() {
     const reponse = await fetch("http://localhost:5678/api/works");
     const works = await reponse.json();
 
     works.map((item) => {
-        //console.log(item)
         const sectionPortfolio = document.querySelector(".gallery");
 
         const carte = document.createElement("article");
