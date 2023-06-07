@@ -44,13 +44,18 @@
 		  	<span class="close_deux">&times;</span>
 		  	<h3>Ajout photo</h3>
 			<form>
-				<div class="formulaireSaisieImg">
+				
+				<div class="formulaireSaisieImg" id="image_non_visible">
 					<div class="carreImage">
 						<i class="fa-sharp fa-regular fa-image"></i>
 					</div>
 					<div class="addbutton">+ Ajouter photo</div>
-					<input type="file" id="image" name="image" accept="image/*" required>
+					<input type="file" id="image" name="image" accept="image/*" onchange="afficheImage();" required>
 					<label for="image">jpg, png : 4 MO max</label>
+				</div>
+				
+				<div id="image_visible">
+					<img id="resultat">
 				</div>
 		
 				<label class="formulaireLegende" for="titre">Titre :</label>

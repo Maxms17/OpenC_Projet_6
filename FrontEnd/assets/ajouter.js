@@ -1,3 +1,5 @@
+const image_visible = document.querySelector("#image_visible");
+const image_non_visible = document.querySelector(".formulaireSaisieImg");
 
 const ajoutModal = document.getElementById("ajoutModal");
 
@@ -12,6 +14,9 @@ ajoutModal.addEventListener("click", function () {
   close_deux.addEventListener("click", function() {
     modal_deux.style.display = "none";
     modal.style.display = "none";
+    
+    image_visible.style.display = "none";
+    image_non_visible.style.display = "flex";
   });
   
   const retour = document.querySelector(".retour");
@@ -19,11 +24,17 @@ ajoutModal.addEventListener("click", function () {
   retour.addEventListener("click", function() {
     modal_deux.style.display = "none";
     modal.style.display = "block";
+
+    image_visible.style.display = "none";
+    image_non_visible.style.display = "flex";
   });
 
   window.addEventListener("click", function(event) {
     if (event.target == modal_deux) {
       modal_deux.style.display = "none";
+
+      image_visible.style.display = "none";
+      image_non_visible.style.display = "flex";
     }
   });
 
@@ -76,3 +87,20 @@ form.addEventListener('submit', function(event) {
   }
 
 });
+
+function afficheImage(){
+  let file = document.querySelector('input[type=file]').files;
+  let resultat = document.querySelector('#resultat');
+
+  if(file.length > 0){
+    let fileReader = new FileReader();
+      fileReader.onload = function(event){
+        document.getElementById('resultat').setAttribute('src',event.target.result);
+      };
+      fileReader.readAsDataURL(file[0]);
+      
+      image_visible.style.display = "flex";
+      image_non_visible.style.display = "none";
+  }
+
+}

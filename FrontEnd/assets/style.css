@@ -568,6 +568,7 @@ article img {
 
 .formulaireSaisieImg {
 	display: flex;
+	
 	flex-direction: column;
 	align-items: center;
 	width: 72%;
@@ -576,6 +577,24 @@ article img {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	background: #E8F1F7;
 	border-radius: 3px;
+}
+
+#image_visible{
+	display: none;
+
+	flex-direction: column;
+	align-items: center;
+	width: 72%;
+	height: 170px;
+	margin: 5% 0 5% 14%;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	background: #E8F1F7;
+	border-radius: 3px;
+}
+
+#resultat {
+	width: auto;
+	height: 170px;
 }
 
 .carreImage {
