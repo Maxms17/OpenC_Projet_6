@@ -20,6 +20,23 @@ function edition_modifier(){
 
 edition_modifier()
 
+function log(){
+
+    const logout = document.getElementById("logout_visible");
+    const login = document.getElementById("login_visible");
+
+    if(localStorage.getItem('token')){
+        logout.style.display = "flex";
+        login.style.display = "none";
+    }
+    else{
+        logout.style.display = "none";
+        login.style.display = "flex";
+    }
+}
+
+log();
+
 const addButton = document.querySelector('.addButton')
 
 addButton?.addEventListener('click', () => {

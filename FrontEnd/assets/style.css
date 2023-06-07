@@ -568,7 +568,7 @@ article img {
 
 .formulaireSaisieImg {
 	display: flex;
-	
+
 	flex-direction: column;
 	align-items: center;
 	width: 72%;
@@ -649,4 +649,24 @@ article img {
 	margin-top: -45px;
 	opacity: 0;
 	margin-bottom: 30px;
+}
+
+.buttonDeco{
+	padding: 0 10px;
+	font-size: 1.2em;
+	color: black;
+	border: 0;
+}
+
+#login_visible{
+	display: block;
+}
+
+#logout_visible{
+	display: none;
+}
+
+.buttonDeco:hover{
+	color: #B1663C;
+	background-color: #fff;
 }

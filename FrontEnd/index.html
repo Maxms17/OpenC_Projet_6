@@ -11,7 +11,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js" defer></script>
-	<script src="./assets/logout_index.js" defer></script>
+	<script src="./assets/logout.js" defer></script>
 	<script src="./assets/edition.js" defer></script>
 	<script src="./assets/modal.js" defer></script>
 	<script src="./assets/ajouter.js" defer></script>
@@ -22,7 +22,6 @@
 		<i class="fa-regular fa-pen-to-square"></i>
 		<h1>Mode édition</h1>
 		<button class="buttonEdition">publier les changements</button>
-		<button class="buttonEdition" id="boutonDeconnexion2">déconnexion</button>
 	</div>
 
 	<div class="modal">
@@ -53,7 +52,7 @@
 					<input type="file" id="image" name="image" accept="image/*" onchange="afficheImage();" required>
 					<label for="image">jpg, png : 4 MO max</label>
 				</div>
-				
+
 				<div id="image_visible">
 					<img id="resultat">
 				</div>
@@ -81,7 +80,12 @@
 			<ul>
 				<li><a href="index.html">projets</a></li>
 				<li><a href="index.html">contact</a></li>
-				<li><a href="login.html">login</a></li>
+				<div id="login_visible">
+					<li><a href="login.html">login</a></li>
+				</div>
+				<div id="logout_visible">
+					<button class="buttonDeco" id="boutonDeconnexion">logout</button>
+				</div>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -96,7 +100,7 @@
 			<article>
 				<h2>Designer d'espace</h2>
 				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
-				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l'esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
 				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 			</article>
 		</section>
